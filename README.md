@@ -45,7 +45,7 @@
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/Group-Activity-Recognition.git
+git clone https://github.com/AhmedYasser06/Group-Activity-Recognition.git
 ```
 
 ### 2. Install the Required Dependencies
@@ -62,7 +62,7 @@ Automatically download and extract checkpoint files:
 import kagglehub
 
 # Retrieve the most recent model version
-checkpoint_path = kagglehub.model_download("yourusername/volleyball-gar/pyTorch/v1")
+checkpoint_path = kagglehub.model_download("AhmedYasser06/volleyball-gar/pyTorch/v1")
 
 print("Model checkpoint location:", checkpoint_path)
 ```
@@ -245,7 +245,7 @@ The `Group_Activity_Temporal_Classifier` module extends individual modeling to t
 
 #### Training Configuration
 
-- **Compute Resources**: Experiments conducted on Kaggle's complimentary GPU allocation (P100 with 16GB memory) [Training Notebook](https://www.kaggle.com/code/username/baseline-8-training).
+- **Compute Resources**: Experiments conducted on Kaggle's complimentary GPU allocation (P100 with 16GB memory) [Training Notebook](https://www.kaggle.com/code/AhmedYasser06/baseline-8-training).
 - **Optimization**: AdamW optimizer with cosine learning rate decay.
 - **Batch Configuration:** 8 samples per iteration
                   
@@ -274,6 +274,6 @@ The `Hierarchical_Group_Activity_Classifier` architecture unifies spatial encodi
 
 #### Training Configuration
 
-- **Compute Resources**: Training performed on Kaggle's free-tier GPU resources (dual T4 GPUs with 15GB memory each) [Training Notebook](https://www.kaggle.com/code/username/baseline-9-training).
+- **Compute Resources**: Training performed on Kaggle's free-tier GPU resources (dual T4 GPUs with 15GB memory each) [Training Notebook](https://www.kaggle.com/code/AhmedYasser06/baseline-9-training).
 - **Optimization**: AdamW with scheduled learning rate adjustment.
 - **Batch Configuration:** 4 samples per GPU device
