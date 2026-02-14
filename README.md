@@ -245,7 +245,7 @@ The `Group_Activity_Temporal_Classifier` module extends individual modeling to t
 
 #### Training Configuration
 
-- **Compute Resources**: Experiments conducted on Kaggle's complimentary GPU allocation (P100 with 16GB memory) [Training Notebook](https://www.kaggle.com/code/AhmedYasser06/baseline-8-training).
+- **Compute Resources**: Experiments conducted on Kaggle's complimentary GPU allocation (P100 with 16GB memory).
 - **Optimization**: AdamW optimizer with cosine learning rate decay.
 - **Batch Configuration:** 8 samples per iteration
                   
