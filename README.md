@@ -3,7 +3,7 @@
 A comprehensive implementation of hierarchical deep learning models for group activity recognition, featuring 9 baseline models progressing from simple single-frame classification to end-to-end hierarchical temporal models.
 
 <p align="center">
-  <img src="assets/model_overview.png" alt="Model Overview" width="600"/>
+  <img src="assets/fig2-cvpr.png" alt="Model Overview" width="600"/>
 </p>
 
 ## 📋 Table of Contents
