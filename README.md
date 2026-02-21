@@ -175,7 +175,7 @@ Additional dataset documentation is available in the original paper's repository
 
 | **Baseline** | **Accuracy** | **F1 Score** |
 |--------------|--------------|--------------|
-| Baseline 1   | 72.66%       | 72.63%       |
+| Baseline 1   | 79.88%       | 79.81%       |
 | Baseline 3   | 80.25%       | 80.24%       |
 | Baseline 4   | 76.59%       | 76.67%       |
 | Baseline 5   | 77.04%       | 77.07%       |
