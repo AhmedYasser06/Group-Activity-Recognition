@@ -1,0 +1,24 @@
+BASELINE B4 - LSTM Temporal Classifier
+======================================================================
+
+Sequence length: 9 frames
+Feature extractor: Frozen B1 ResNet50
+
+Best Val Acc: 0.7562
+Test Acc:     0.7644
+Test F1:      0.7625
+
+              precision    recall  f1-score   support
+
+      l-pass     0.7474    0.6283    0.6827       226
+      r-pass     0.7566    0.6810    0.7168       210
+     l-spike     0.8090    0.8994    0.8519       179
+     r_spike     0.7538    0.8671    0.8065       173
+       l_set     0.6684    0.7798    0.7198       168
+       r_set     0.7337    0.7031    0.7181       192
+  l_winpoint     0.9072    0.8627    0.8844       102
+  r_winpoint     0.8675    0.8276    0.8471        87
+
+    accuracy                         0.7644      1337
+   macro avg     0.7804    0.7811    0.7784      1337
+weighted avg     0.7660    0.7644    0.7625      1337

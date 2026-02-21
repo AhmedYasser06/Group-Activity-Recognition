@@ -1,0 +1,21 @@
+BASELINE B1 - ResNet50 Single-Frame Classifier
+======================================================================
+
+Best Val Acc: 0.7174
+Test Acc:     0.7457
+Test F1:      0.7449
+
+              precision    recall  f1-score   support
+
+      l-pass     0.7163    0.6593    0.6866       226
+      r-pass     0.7228    0.6952    0.7087       210
+     l-spike     0.7778    0.8603    0.8170       179
+     r_spike     0.7382    0.8150    0.7747       173
+       l_set     0.6821    0.7024    0.6921       168
+       r_set     0.7090    0.6979    0.7034       192
+  l_winpoint     0.8812    0.8725    0.8768       102
+  r_winpoint     0.8800    0.7586    0.8148        87
+
+    accuracy                         0.7457      1337
+   macro avg     0.7634    0.7577    0.7593      1337
+weighted avg     0.7463    0.7457    0.7449      1337
