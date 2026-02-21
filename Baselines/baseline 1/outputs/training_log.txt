@@ -1,0 +1,39 @@
+============================================================
+VOLLEYBALL BASELINE 1 - REFERENCE APPROACH
+============================================================
+
+Configuration:
+  - Model: ResNet50 (pretrained, DEFAULT weights)
+  - Architecture: Simple FC layer (like reference)
+  - Epochs: 30
+  - Batch Size: 64
+  - Learning Rate: 0.001
+  - Optimizer: AdamW (weight_decay=1e-4)
+  - Scheduler: ReduceLROnPlateau
+  - Loss: CrossEntropyLoss (no weights)
+  - Mixed Precision: Yes
+  - Train samples: 2152
+  - Val samples: 1341
+  - Test samples: 1337
+
+FINAL RESULTS
+============================================================
+Best Validation Accuracy: 0.7770
+Test Loss:                0.9007
+Test Accuracy:            0.7988
+Test F1-score:            0.7981
+
+              precision    recall  f1-score   support
+
+      l-pass     0.8164    0.7478    0.7806       226
+      r-pass     0.7443    0.7762    0.7599       210
+     l-spike     0.8429    0.8994    0.8703       179
+     r_spike     0.8092    0.8092    0.8092       173
+       l_set     0.7738    0.7738    0.7738       168
+       r_set     0.7391    0.7083    0.7234       192
+  l_winpoint     0.8932    0.9020    0.8976       102
+  r_winpoint     0.8370    0.8851    0.8603        87
+
+    accuracy                         0.7988      1337
+   macro avg     0.8070    0.8127    0.8094      1337
+weighted avg     0.7985    0.7988    0.7981      1337
