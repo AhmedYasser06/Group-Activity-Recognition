@@ -1,0 +1,7 @@
+BASELINE B5 - PHASE A: Person Temporal Action Classifier
+======================================================================
+
+Architecture: ResNet50 → LSTM(512) → FC → 9 classes
+Sequence length: 9 frames
+
+Best Val Acc: 0.7800
