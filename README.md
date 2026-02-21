@@ -178,7 +178,7 @@ Additional dataset documentation is available in the original paper's repository
 | Baseline 1   | 79.88%       | 79.81%       |
 | Baseline 3   | 81.45%       | 81.39%       |
 | Baseline 4   | 76.44%       | 76.25%       |
-| Baseline 5   | 77.04%       | 77.07%       |
+| Baseline 5   | 78.21%       | 78.36%       |
 | Baseline 6   | 84.52%       | 83.99%       |
 | Baseline 7   | 89.15%       | 89.14%       |
 | Baseline 8   | 92.30%       | 92.29%       |
