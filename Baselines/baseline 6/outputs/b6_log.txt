@@ -1,0 +1,26 @@
+Baseline B6 - Two-stage Model WITHOUT LSTM 1
+======================================================================
+Phase A: Person action classifier (loaded from checkpoint)
+Phase B: LSTM on IMAGE level (no person-level LSTM)
+Sequence: 9 frames
+LSTM Hidden: 512
+Augmentations: GaussianBlur, ColorJitter, RandomBrightnessContrast, GaussNoise, HFlip, VFlip
+
+Best Val Acc: 0.7300
+Test Acc:     0.8008
+Test F1:      0.8002
+
+              precision    recall  f1-score   support
+
+      l-pass     0.7611    0.8616    0.8083       159
+      r-pass     0.7812    0.8389    0.8091       149
+     l-spike     0.9294    0.8061    0.8634        98
+     r_spike     0.8661    0.8584    0.8622       113
+       l_set     0.8099    0.8582    0.8333       134
+       r_set     0.8824    0.7792    0.8276       154
+  l_winpoint     0.6941    0.7024    0.6982        84
+  r_winpoint     0.6102    0.5294    0.5669        68
+
+    accuracy                         0.8008       959
+   macro avg     0.7918    0.7793    0.7836       959
+weighted avg     0.8035    0.8008    0.8002       959
