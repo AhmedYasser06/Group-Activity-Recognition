@@ -17,12 +17,6 @@ Key difference from B3:
 Dataset: Volleyball Dataset
 Paper: Ibrahim et al., CVPR 2016
 
-CORRECTIONS:
-- Fixed GaussNoise to match reference (no var_limit parameter)
-- Removed verbose from scheduler (not supported in older PyTorch)
-- Changed scheduler to monitor val_loss (mode='min') like reference
-- Fixed LR tracking to capture BEFORE scheduler step
-- Matched augmentation strategy to reference
 """
 
 import os
@@ -794,4 +788,5 @@ if __name__ == "__main__":
     
     # Train Phase B
     test_acc, test_f1, history = train_phase_b(person_classifier)
+
     
