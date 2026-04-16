@@ -1,15 +1,3 @@
-# ============================================================
-#  BASELINE B8 — Final Kaggle Single Cell  (with resume support)
-#
-#  Fixes applied:
-#  1. Phase B crash: frames in same clip have variable player counts
-#     after lost-filtering → stack fails. Fixed by padding each frame
-#     to a consistent player count WITHIN the clip before stacking.
-#  2. Phase A accuracy improved: aligned with reference B7 Phase A
-#     (Doc 25/28): WD=0.01, label_smoothing=0.05, aug p=0.55,
-#     patience=2 for scheduler — matching the reference that achieved
-#     79.64% val acc.
-#
 #  ── HOW TO RESUME AFTER TIMEOUT ─────────────────────────────
 #  Case 1: Timed out during Phase A
 #    RESUME_PHASE_A = True
@@ -737,14 +725,14 @@ def early_diagnostic(model, val_loader, criterion, device,
     print(f"  r_winpoint recall : {r_win*100:.1f}%")
     print(f"  l_winpoint recall : {l_win*100:.1f}%")
     if r_win > 0.40 and l_win > 0.40:
-        print("  ✅ FIX CONFIRMED — both winpoints learning.")
+        print("   FIX CONFIRMED — both winpoints learning.")
         print("     → Safe to continue to 50 epochs.")
     elif r_win < 0.20:
-        print("  ❌ FIX NOT WORKING — r_winpoint still collapsing.")
+        print("   FIX NOT WORKING — r_winpoint still collapsing.")
         print("     → Check that class weights ARE enabled in criterion.")
         print("     → Check that sort=True AND no lost filtering in GroupActivityDataset.")
     else:
-        print("  ⚠️  PARTIAL — r_winpoint recovering but still low.")
+        print("    PARTIAL — r_winpoint recovering but still low.")
         print("     → Continue; should improve with more epochs.")
     print("█"*65 + "\n")
 
@@ -766,14 +754,14 @@ def epoch_report(phase, epoch, total_epochs,
           f"f1={val_f1:.4f}")
     print(f"  Val acc  [{bar:<30}]  {val_acc*100:.1f}%")
     if val_acc > best_val_acc:
-        print(f"  ✅ New best!  val acc → {val_acc*100:.2f}%")
+        print(f"   New best!  val acc → {val_acc*100:.2f}%")
     else:
-        print(f"  ⏳ No improvement for {no_improve} epoch(s)  "
+        print(f"   No improvement for {no_improve} epoch(s)  "
               f"(best={best_val_acc*100:.2f}%)")
     if gap > 0.15:
-        print(f"  ⚠️  Over-fitting: train-val gap = {gap*100:.1f}%")
+        print(f"    Over-fitting: train-val gap = {gap*100:.1f}%")
     if lr < 1e-7:
-        print(f"  ⚠️  LR very small ({lr:.2e}) — may have stalled")
+        print(f"    LR very small ({lr:.2e}) — may have stalled")
     # compact per-class recall table every epoch (Phase B only)
     if val_targets is not None and val_preds is not None:
         per_class_recall_table(val_targets, val_preds, GROUP_CLASSES)
