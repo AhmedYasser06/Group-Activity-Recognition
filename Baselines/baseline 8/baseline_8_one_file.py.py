@@ -74,8 +74,7 @@ TEST_SPLIT  = [4,5,9,11,14,20,21,25,29,34,35,37,43,44,45,47]
 
 # ── 6. Hyper-parameters ───────────────────────────────────────
 
-# Phase A — aligned with reference B7 Phase A (Doc 25/28)
-# Key changes vs before: WD=0.01, smoothing=0.05, aug p=0.55, patience=2
+# Phase A — aligned with reference B7 Phase A
 PA_HIDDEN      = 512
 PA_LAYERS      = 1
 PA_NUM_CLASSES = 9
@@ -293,7 +292,7 @@ class GroupActivityDataset(Dataset):
         return clip, labels
 
 
-# ── 8. Collate functions (exact reference) ────────────────────
+# ── 8. Collate functions ────────────────────
 
 def person_collate_fn(batch):
     """Pads player dim to 12. Returns (B,12,9,C,H,W), (B*12,9)."""
@@ -339,7 +338,7 @@ def group_collate_fn(batch):
     return padded_clips, labels
 
 
-# ── 9. Models (exact reference) ───────────────────────────────
+# ── 9. Models ───────────────────────────────
 
 class PersonActivityClassifier(nn.Module):
     def __init__(self, num_classes=9, hidden_size=512, num_layers=1):
