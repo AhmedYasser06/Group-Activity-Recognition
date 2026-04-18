@@ -1,20 +1,3 @@
-#  ── HOW TO RESUME AFTER TIMEOUT ─────────────────────────────
-#  Case 1: Timed out during Phase A
-#    RESUME_PHASE_A = True
-#    PHASE_A_RESUME_CKPT = "/kaggle/working/phase_a_epoch_latest.pkl"
-#
-#  Case 2: Phase A done, timed out during Phase B
-#    SKIP_PHASE_A = True
-#    PHASE_A_BEST_FOR_B = "/kaggle/working/phase_a_best_b8.pkl"
-#    RESUME_PHASE_B = True
-#    PHASE_B_RESUME_CKPT = "/kaggle/working/phase_b_epoch_latest.pkl"
-#
-#  Case 3: Phase A done, starting Phase B fresh
-#    SKIP_PHASE_A = True
-#    PHASE_A_BEST_FOR_B = "/kaggle/working/phase_a_best_b8.pkl"
-#    RESUME_PHASE_B = False
-# ============================================================
-
 # ── 0. Installs ──────────────────────────────────────────────
 import subprocess, sys
 subprocess.run([sys.executable, "-m", "pip", "install", "-q",
