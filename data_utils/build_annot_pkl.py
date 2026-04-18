@@ -1,26 +1,13 @@
-# ============================================================
-#  Run this cell ONCE before baseline_b8_kaggle.py.
-#  Output: /kaggle/working/annot_all.pkl
-# ============================================================
-
 import os
 import pickle
 from typing import List
 
-# ─────────────────────────────────────────────────────────────
-#  !! UPDATE THIS PATH IF NEEDED !!
-#  Must be the folder that directly contains:
-#    videos/
-#    volleyball_tracking_annotation/
-# ─────────────────────────────────────────────────────────────
 DATASET_ROOT = "/kaggle/input/datasets/ahmedmohamed365/volleyball/volleyball_"
 
 VIDEOS_ROOT  = f"{DATASET_ROOT}/videos"
 ANNOT_ROOT   = f"{DATASET_ROOT}/volleyball_tracking_annotation"
 OUTPUT_PATH  = "/kaggle/working/annot_all.pkl"
 
-
-# ── BoxInfo  (exact copy of professor's boxinfo.py) ──────────
 class BoxInfo:
     def __init__(self, line):
         words          = line.split()
@@ -41,7 +28,6 @@ class BoxInfo:
                 f"box={self.box}, category='{self.category}')")
 
 
-# ── exact copy of professor's load_tracking_annot() ──────────
 def load_tracking_annot(path):
     with open(path, 'r') as file:
         player_boxes    = {idx: [] for idx in range(12)}
@@ -70,7 +56,6 @@ def load_tracking_annot(path):
     return frame_boxes_dct
 
 
-# ── exact copy of professor's load_video_annot() ─────────────
 def load_video_annot(video_annot):
     with open(video_annot, 'r') as file:
         clip_category_dct = {}
@@ -85,7 +70,6 @@ def load_video_annot(video_annot):
     return clip_category_dct
 
 
-# ── exact copy of professor's load_volleyball_dataset() ──────
 def load_volleyball_dataset(videos_root, annot_root):
     videos_dirs = os.listdir(videos_root)
     videos_dirs.sort()
@@ -130,7 +114,6 @@ def load_volleyball_dataset(videos_root, annot_root):
     return videos_annot
 
 
-# ── save pkl  (exact copy of professor's create_pkl_version) ─
 def create_pkl_version():
     print("=" * 60)
     print("  Building annot_all.pkl")
@@ -147,13 +130,12 @@ def create_pkl_version():
     total_clips = sum(len(v) for v in videos_annot.values())
     print()
     print("=" * 60)
-    print(f"  ✅  Done!  Saved → {OUTPUT_PATH}")
+    print(f"  Done!  Saved → {OUTPUT_PATH}")
     print(f"  Videos : {len(videos_annot)}")
     print(f"  Clips  : {total_clips}")
     print("=" * 60)
 
 
-# ── sanity check  (exact copy of professor's test_pkl_version) 
 def test_pkl_version():
     print("\n── Sanity Check ─────────────────────────────────────")
     with open(OUTPUT_PATH, 'rb') as file:
