@@ -1,24 +1,3 @@
-"""
-Baseline B6 - Two-stage Model WITHOUT LSTM 1 (FINAL CORRECTED VERSION)
-========================================================================
-This baseline is a variant of the full model, omitting the person-level temporal 
-model (LSTM 1). Instead, the person-level classification is done only with the 
-fine-tuned person CNN.
-
-Architecture:
-- Phase A: Train person action classifier (9 classes) using ResNet50
-- Phase B: Extract features per person → Max pool across players → LSTM on image level → Group activity (8 classes)
-
-Key difference from B3:
-- B3: No temporal modeling at all
-- B6: Temporal modeling at IMAGE level only (LSTM on pooled features)
-- B7: Full two-stage model (LSTM on person level + LSTM on image level)
-
-Dataset: Volleyball Dataset
-Paper: Ibrahim et al., CVPR 2016
-
-"""
-
 import os
 import torch
 import numpy as np
@@ -102,7 +81,7 @@ val_data = ["0","2","8","12","17","19","24","26","27","28","30","33","46","49","
 test_data = ["4","5","9","11","14","20","21","25","29","34","35","37","43","44","45","47"]
 
 # ============================================================================
-# DATASET CLASSES (FIXED TO MATCH REFERENCE)
+# DATASET CLASSES 
 # ============================================================================
 
 class PersonActionDataset(Dataset):
@@ -468,7 +447,7 @@ def collate_fn(batch):
 
 
 # ============================================================================
-# TRANSFORMS - MATCHING REFERENCE TRAINER
+# TRANSFORMS 
 # ============================================================================
 
 # Phase A: Simple transforms (already trained)
@@ -791,34 +770,6 @@ if __name__ == "__main__":
 
     
 
-
-# """
-# Baseline B6 - Two-stage Model WITHOUT LSTM 1 (FINAL CORRECTED VERSION)
-# ========================================================================
-# This baseline is a variant of the full model, omitting the person-level temporal 
-# model (LSTM 1). Instead, the person-level classification is done only with the 
-# fine-tuned person CNN.
-
-# Architecture:
-# - Phase A: Train person action classifier (9 classes) using ResNet50
-# - Phase B: Extract features per person → Max pool across players → LSTM on image level → Group activity (8 classes)
-
-# Key difference from B3:
-# - B3: No temporal modeling at all
-# - B6: Temporal modeling at IMAGE level only (LSTM on pooled features)
-# - B7: Full two-stage model (LSTM on person level + LSTM on image level)
-
-# Dataset: Volleyball Dataset
-# Paper: Ibrahim et al., CVPR 2016
-
-# CORRECTIONS:
-# - Fixed GaussNoise to match reference (no var_limit parameter)
-# - Removed verbose from scheduler (not supported in older PyTorch)
-# - Changed scheduler to monitor val_loss (mode='min') like reference
-# - Fixed LR tracking to capture BEFORE scheduler step
-# - Matched augmentation strategy to reference
-# """
-
 # import os
 # import torch
 # import numpy as np
@@ -902,7 +853,7 @@ if __name__ == "__main__":
 # test_data = ["4","5","9","11","14","20","21","25","29","34","35","37","43","44","45","47"]
 
 # # ============================================================================
-# # DATASET CLASSES (FIXED TO MATCH REFERENCE)
+# # DATASET CLASSES 
 # # ============================================================================
 
 # class PersonActionDataset(Dataset):
@@ -1268,7 +1219,7 @@ if __name__ == "__main__":
 
 
 # # ============================================================================
-# # TRANSFORMS - MATCHING REFERENCE TRAINER
+# # TRANSFORMS 
 # # ============================================================================
 
 # # Phase A: Simple transforms (already trained)
